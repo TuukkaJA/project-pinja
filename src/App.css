@@ -1,38 +1,50 @@
-.App {
+.app {
+  display: flex;
+}
+
+.content {
+  background-color: #373a38;
+  padding: 1rem;
+  margin: 2rem auto;
+  width: 50rem;
+  max-width: 95%;
+  border-radius: 12px;
   text-align: center;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search-bar {
+  margin-bottom: 20px;
+  padding: 1rem 2rem;
+}
+.app button {
+  font: inherit;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: 1px solid #ffffff;
+  background-color: #db0057;
+  color: white;
+  border-radius: 12px;
+  margin-right: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app button:hover,
+.app button:active {
+  background-color: #b30349;
+  border-color: #b30349;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.consultant-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.consultant-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.consultant-card:hover {
+  background-color: #535252;
 }

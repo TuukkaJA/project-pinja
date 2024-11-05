@@ -1,4 +1,4 @@
-import './Testi.css';
+/*import './Testi.css';
 
 function Testi(){
     return (
@@ -9,4 +9,4 @@ function Testi(){
     );
 }
 
-export default Testi;
+export default Testi;*/
