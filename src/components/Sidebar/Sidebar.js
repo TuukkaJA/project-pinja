@@ -10,7 +10,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       {isOpen && (
         <ul>
           <li>Profile</li>
-          <li>Konsultit</li>
+          <li>Consultants</li>
           <li>Team</li>
         </ul>
       )}
