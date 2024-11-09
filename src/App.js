@@ -47,7 +47,8 @@ function App() {
 
   const filteredConsultants = consultants.filter((consultant) =>
     consultant.position.toLowerCase().startsWith(searchTerm.toLowerCase()) ||
-    consultant.name.toLowerCase().startsWith(searchTerm.toLowerCase())
+    consultant.name.toLowerCase().startsWith(searchTerm.toLowerCase()) ||
+    consultant.surname.toLowerCase().startsWith(searchTerm.toLowerCase())
   );
 
   return (
