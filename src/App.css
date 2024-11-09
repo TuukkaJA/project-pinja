@@ -1,5 +1,6 @@
 .app {
   display: flex;
+  flex-direction: column;
   background-color: #191b1a;
 }
 
@@ -23,17 +24,17 @@
   font: inherit;
   cursor: pointer;
   padding: 1rem 2rem;
-  border: 1px solid #ffffff;
-  background-color: #db0057;
+  border: none;
+  background-color: transparent;
   color: white;
   border-radius: 12px;
-  margin-right: 1rem;
+  width: 50px;
 }
 
 .app button:hover,
 .app button:active {
-  background-color: #b30349;
-  border-color: #b30349;
+  background-color: none;
+  border-color: none;
 }
 
 .consultant-list {

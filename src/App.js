@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Sidebar from './components/Sidebar/Sidebar';
 import SearchBar from './components/SearchBar/SearchBar';
 import ConsultantList from './components/ConsultantList/ConsultantList';
+import toggleIcon from './toggle-icon.png';
 import './App.css';
 
 function App() {
@@ -52,10 +53,11 @@ function App() {
   return (
     <div className="app">
       {isSidebarOpen && <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />}
+       <button className="toggle-sidebar" onClick={toggleSidebar} style={{ display: 'flex', alignItems: 'center' }}>
+        <img src={toggleIcon} alt="Toggle Icon" style={{ width: '30px', height: '30px' }} />
+       </button>
       <div className="content">
-        <button onClick={toggleSidebar}>
-          {isSidebarOpen ? 'Close Sidebar' : 'Open Sidebar'}
-        </button>
+        <h1>Consultants</h1>
         <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
         <ConsultantList consultants={filteredConsultants} />
       </div>

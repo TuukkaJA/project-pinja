@@ -16,5 +16,13 @@
 }
 
 .sidebar.open {
-  transform: translateX(0); /* Slide sidebar into view */
+  transform: translateX(0);
+}
+
+.sidebar.open button {
+  background-color: none;
+}
+.sidebar.open button:hover {
+  background-color: none;
+  border-color: none;
 }
