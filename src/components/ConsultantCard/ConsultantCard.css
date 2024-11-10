@@ -1,5 +1,6 @@
 .name {
     color: rgb(255, 255, 255);
+    text-decoration: 2px underline;
 }
 
 .position {
@@ -29,3 +30,15 @@
     display: flex;
     justify-content: center;
 }
+
+.consultant-card {
+    background-color: #444745;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+  }
+  
+  .consultant-card:hover {
+    background-color: #535252;
+    box-shadow: rgb(31, 30, 30) 10px 10px 10px;
+  }

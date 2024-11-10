@@ -1,5 +1,6 @@
 import React from 'react';
 import ConsultantCard from '../ConsultantCard/ConsultantCard'
+import './ConsultantList.css';
 
 const ConsultantList = ({ consultants }) => {
   return (

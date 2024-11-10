@@ -1,0 +1,8 @@
+.consultant-list {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    border-radius: 12px;
+    padding: 1rem;
+    background-color: #373a38;
+  }

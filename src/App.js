@@ -54,8 +54,8 @@ function App() {
   return (
     <div className="app">
       {isSidebarOpen && <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />}
-       <button className="toggle-sidebar" onClick={toggleSidebar} style={{ display: 'flex', alignItems: 'center' }}>
-        <img src={toggleIcon} alt="Toggle Icon" style={{ width: '30px', height: '30px' }} />
+       <button className="toggle-sidebar" onClick={toggleSidebar}>
+        <img src={toggleIcon} alt="Toggle Icon" />
        </button>
       <div className="content">
         <h1>Consultants</h1>
