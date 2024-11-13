@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Sidebar.css';
 import toggleIcon from '../../toggle-icon.png';
 
-const Sidebar = ({ isOpen, toggleSidebar }) => {
+const Sidebar = ({ isOpen, toggleSidebar, activeItem, setActiveItem }) => {
 
-const  [activeItem, setActiveItem] = useState("Consultants");
+const navigate = useNavigate();
 
 const handleItemClick = (item) => {
   setActiveItem(item);
+  if (item === "Consultants") navigate('/consultants') ;
+  if (item === "Profile") navigate('/profile');
 };
 
 
@@ -22,11 +25,13 @@ const handleItemClick = (item) => {
           <li
           onClick={() => handleItemClick("Profile")}
           className={activeItem === "Profile" ? "active" : ""}>
-          Profile</li>
+          Profile
+          </li>
           <li 
             onClick={() => handleItemClick("Consultants")}
             className={activeItem === "Consultants" ? "active" : ""}>
-          Consultants</li>
+          Consultants
+          </li>
           <li>Team</li>
         </ul>
       )}
