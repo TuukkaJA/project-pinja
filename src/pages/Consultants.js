@@ -4,7 +4,6 @@ import SearchBar from '../components/SearchBar/SearchBar';
 import Sidebar from '../components/Sidebar/Sidebar';
 import toggleIcon from '../toggle-icon.png';
 
-
 function Consultants() {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
     const [activeItem, setActiveItem] = useState('Consultants');
@@ -45,7 +44,6 @@ function Consultants() {
     const toggleSidebar = () => 
       setSidebarOpen((prevState) => !prevState);
   
-  
     const filteredConsultants = consultants.filter((consultant) =>
       consultant.position.toLowerCase().startsWith(searchTerm.toLowerCase()) ||
       consultant.name.toLowerCase().startsWith(searchTerm.toLowerCase()) ||
@@ -62,7 +60,6 @@ function Consultants() {
             activeItem={activeItem}
             setActiveItem={setActiveItem}
              />)}
-
          <button className="toggle-sidebar" onClick={toggleSidebar}>
           <img src={toggleIcon} alt="Toggle Icon" />
          </button>
