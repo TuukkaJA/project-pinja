@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar/Sidebar';
 import toggleIcon from '../toggle-icon.png';
 import '../App.css';
+import Cv from './Cv/Cv';
 
 function Profile() {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -23,19 +24,7 @@ function Profile() {
           <img src={toggleIcon} alt="Toggle Icon" />
          </button>
         <div className="content">
-        <h1>CV</h1>
-          <p>Full Name: John Doe</p>
-          <p>Age: 25</p>
-          <p>Occupation: Web Developer</p>
-          <p>Location: Lagos, Nigeria</p>
-          <p>Skills: HTML, CSS, JavaScript, React</p>
-          <p>Experience: 3 years</p>
-          <p>Education: B.Sc Computer Science</p>
-          <p>Language: English</p>
-          <p>Phone: 08012345678</p>
-          <p>Email:
-            <a href="mailto: "> JohnDoe@gmail.com</a>
-          </p>
+       <Cv />
         </div>
       </div>
     );
