@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar/Sidebar';
-import toggleIcon from '../toggle-icon.png';
+import toggleIcon from '../toggle-icon_pink.png';
 import '../App.css';
 import Cv from './Cv/Cv';
 

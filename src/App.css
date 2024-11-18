@@ -20,6 +20,10 @@
   filter: blur(5px);
 }
 
+.app h1 {
+  color: #db0057;
+}
+
 .app button {
   font: inherit;
   cursor: pointer;
