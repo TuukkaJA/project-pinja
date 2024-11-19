@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Sidebar.css';
-import toggleIcon from '../../toggle-icon.png';
+import toggleIcon from '../../toggle-icon_pink.png';
 
-const Sidebar = ({ isOpen, toggleSidebar, activeItem, setActiveItem }) => {
+const Sidebar = ({ isOpen, toggleSidebar, activeItem, setActiveItem, loggedInUser }) => {
 
 const navigate = useNavigate();
 
@@ -11,8 +11,8 @@ const handleItemClick = (item) => {
   setActiveItem(item);
   if (item === "Consultants") navigate('/consultants') ;
   if (item === "Profile") navigate('/profile');
+  if (item === "Login") navigate('/Login');
 };
-
 
   return (
     <div className={`sidebar open`}>
@@ -22,6 +22,11 @@ const handleItemClick = (item) => {
       </button>
       {isOpen && (
         <ul>
+          <li
+          onClick={() => handleItemClick("Login")}
+          className={activeItem === "Login" ? "active" : ""}>
+          Login
+          </li>
           <li
           onClick={() => handleItemClick("Profile")}
           className={activeItem === "Profile" ? "active" : ""}>
@@ -34,6 +39,11 @@ const handleItemClick = (item) => {
           </li>
           <li>Team</li>
         </ul>
+      )}
+      {loggedInUser && ( 
+        <div className="logged-in-user">
+          Logged in as: <strong>{loggedInUser}</strong>
+        </div>
       )}
     </div>
   );

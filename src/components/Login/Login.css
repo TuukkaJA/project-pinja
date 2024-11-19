@@ -1,0 +1,106 @@
+body {
+    background-color: #191b1a;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 20rem;
+    margin: 10rem auto;
+    padding: 2rem;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 10px;
+  }
+
+  .control {
+    margin: 1rem 0;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+  }
+  
+   button {
+    font: inherit;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    border: none;
+    background-color: transparent;
+    color: white;
+    border-radius: 12px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+  }
+  
+   button:hover,
+   button:active {
+    background-color: none;
+    border-color: none;
+  }
+  
+   button img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .control label,
+  .control input {
+    display: block;
+  }
+  
+  .control label {
+    font-weight: bold;
+    flex: 1;
+    color: #464646;
+    margin-bottom: 0.5rem;
+  }
+  
+  .control input {
+    flex: 3;
+    font: inherit;
+    padding: 0.35rem 0.35rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .control input:focus {
+    outline: none;
+    border-color: #4f005f;
+    background: #f6dbfc;
+  }
+  
+  .control.invalid input {
+    border-color: red;
+    background: #fbdada;
+  }
+  
+  .actions {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .actions button {
+    color: #ffffff;
+    background-color: #db0057;
+    font-weight: bold;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    width: auto;
+    margin: 1rem auto;
+  }
+  
+  .actions button:hover {
+    color: #ffffff;
+    background-color: #97013d; 
+}
+
+  @media (min-width: 768px) {
+    .control {
+      align-items: center;
+      flex-direction: row;
+    }
+  }
