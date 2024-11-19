@@ -15,6 +15,10 @@
   z-index: 1000;
 }
 
+.logged-in-user {
+  text-align: center;
+}
+
 .sidebar.open {
   transform: translateX(0);
 }

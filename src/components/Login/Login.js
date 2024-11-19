@@ -45,6 +45,7 @@ const Login = (props) => {
     const submitHandler = (event) => {
       event.preventDefault();
       props.onLogin(enteredEmail, enteredPassword);
+      localStorage.setItem('loggedInUser', enteredEmail);
       navigate('/consultants');
     };
 

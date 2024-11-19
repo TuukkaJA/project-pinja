@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import './Sidebar.css';
 import toggleIcon from '../../toggle-icon_pink.png';
 
-const Sidebar = ({ isOpen, toggleSidebar, activeItem, setActiveItem, loggedInUser }) => {
+const Sidebar = ({ isOpen, toggleSidebar, activeItem, setActiveItem }) => {
+
+const loggedInUser = localStorage.getItem('loggedInUser');
 
 const navigate = useNavigate();
 
@@ -20,6 +22,11 @@ const handleItemClick = (item) => {
         {isOpen ? '' : 'Open Sidebar'}
         <img src={toggleIcon} alt="Toggle Icon" />
       </button>
+      {loggedInUser && ( 
+        <div className="logged-in-user">
+          Logged in as: <strong>{loggedInUser}</strong>
+        </div>
+      )}
       {isOpen && (
         <ul>
           <li
@@ -39,11 +46,6 @@ const handleItemClick = (item) => {
           </li>
           <li>Team</li>
         </ul>
-      )}
-      {loggedInUser && ( 
-        <div className="logged-in-user">
-          Logged in as: <strong>{loggedInUser}</strong>
-        </div>
       )}
     </div>
   );
