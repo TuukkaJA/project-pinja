@@ -10,7 +10,7 @@ const ConsultantCard = ({ consultant }) => {
         <h3 className="name">{consultant.name} {consultant.surname}</h3>
         <div>
           <p className="position">{consultant.position}</p> 
-          <p>{consultant.experienceyears}</p>
+          <p className="experience">{consultant.experienceyears}</p>
        </div>
         <a className="download-CV" href={consultant.cvLink} download>
           <img src={downLoadIcon} alt="" /> Download CV

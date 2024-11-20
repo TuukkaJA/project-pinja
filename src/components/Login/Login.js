@@ -12,7 +12,7 @@ const Login = ({onLogin}) => {
     const [passwordIsValid, setPasswordIsValid] = useState();
     const [formIsValid, setFormIsValid] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [isSidebarOpen, setSidebarOpen] = useState(true);
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
     const [activeItem, setActiveItem] = useState('Login');
     const navigate = useNavigate();
 
@@ -83,7 +83,7 @@ const Login = ({onLogin}) => {
               className={`control ${
         emailIsValid === false ? 'invalid' : ''
               }`}
-            >
+              >
               <label htmlFor="email">E-Mail</label>
               <input
                 type="email"

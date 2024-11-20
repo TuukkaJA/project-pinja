@@ -6,7 +6,6 @@ import toggleIcon from '../../toggle-icon_pink.png';
 const Sidebar = ({ isOpen, toggleSidebar, activeItem, setActiveItem }) => {
 
 const loggedInUser = localStorage.getItem('loggedInUser');
-
 const navigate = useNavigate();
 
 const handleLogout = () => {
@@ -36,11 +35,6 @@ return (
       {isOpen && (
         <ul>
           <li
-          onClick={() => handleItemClick("Login")}
-          className={activeItem === "Login" ? "active" : ""}>
-          Login
-          </li>
-          <li
           onClick={() => handleItemClick("Profile")}
           className={activeItem === "Profile" ? "active" : ""}>
           Profile
@@ -54,9 +48,18 @@ return (
         </ul>
       )}
       <div className="logout">
+        {loggedInUser ? (
         <button className="logout-button" onClick={handleLogout}>
             Logout
         </button>
+        ) : (
+          <button
+          className="login-button"
+          onClick={() => navigate('/Login')}
+        >
+          Login
+        </button>
+      )}
       </div>
     </div>
   );

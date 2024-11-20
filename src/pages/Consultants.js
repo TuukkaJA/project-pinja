@@ -6,7 +6,7 @@ import CVModal from '../components/CVModal/CVModal';
 import toggleIcon from '../toggle-icon_pink.png';
 
 function Consultants() {
-    const [isSidebarOpen, setSidebarOpen] = useState(true);
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
     const [activeItem, setActiveItem] = useState('Consultants');
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedConsultant, setSelectedConsultant] = useState(null);
