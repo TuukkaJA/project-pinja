@@ -6,7 +6,6 @@ import Login from './components/Login/Login';
 
 function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const[loggedInUser, setLoggedInUser] = useState('');
 

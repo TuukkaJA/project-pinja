@@ -1,19 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../Sidebar/Sidebar';
 import toggleIcon from '../../toggle-icon_pink.png';
 import '../../App.css'
 import './Login.css'
 
-const Login = (props) => {
+const Login = ({onLogin}) => {
     const [enteredEmail, setEnteredEmail] = useState('');
     const [emailIsValid, setEmailIsValid] = useState();
     const [enteredPassword, setEnteredPassword] = useState('');
     const [passwordIsValid, setPasswordIsValid] = useState();
     const [formIsValid, setFormIsValid] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isSidebarOpen, setSidebarOpen] = useState(true);
     const [activeItem, setActiveItem] = useState('Login');
     const navigate = useNavigate();
+
+    useEffect(() => {
+      const storedUser = localStorage.getItem('loggedInUser');
+      if (storedUser) {
+        setIsLoggedIn(true);
+      }
+    }, []);
   
     const toggleSidebar = () => 
       setSidebarOpen((prevState) => !prevState);
@@ -44,9 +52,10 @@ const Login = (props) => {
   
     const submitHandler = (event) => {
       event.preventDefault();
-      props.onLogin(enteredEmail, enteredPassword);
       localStorage.setItem('loggedInUser', enteredEmail);
-      navigate('/consultants');
+      setIsLoggedIn(true);
+      onLogin(enteredEmail, enteredPassword);
+      navigate('/login');
     };
 
     return (
@@ -63,6 +72,12 @@ const Login = (props) => {
             setActiveItem={setActiveItem}
             loggedInUser={enteredEmail}
             />)}
+          {isLoggedIn ? (
+          <div className="welcome-message">
+            <h2>Welcome Back!</h2>
+            <p>You are logged in as <strong>{localStorage.getItem('loggedInUser')}</strong>.</p>
+          </div>
+        ) : (   
           <form onSubmit={submitHandler}>
             <div
               className={`control ${
@@ -93,9 +108,10 @@ const Login = (props) => {
               />
             </div>
             <div className='actions'>
-                <button type="submit" onClick={props.onClick} disabled={!formIsValid}>Login</button>
+                <button type="submit"  disabled={!formIsValid}>Login</button>
             </div>
           </form>
+        )}
         </div>
       </div>
       );

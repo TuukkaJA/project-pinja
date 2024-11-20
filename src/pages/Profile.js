@@ -5,7 +5,7 @@ import '../App.css';
 import Cv from './Cv/Cv';
 
 function Profile() {
-    const [isSidebarOpen, setSidebarOpen] = useState(false);
+    const [isSidebarOpen, setSidebarOpen] = useState(true);
     const [activeItem, setActiveItem] = useState('Profile');
   
     const toggleSidebar = () => 

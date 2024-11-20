@@ -19,7 +19,28 @@
   text-align: center;
 }
 
-.sidebar.open {
+.logout-button{
+  background-color: #db0057;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  cursor: pointer;
+  display: flex;
+  width: auto;
+}
+
+.logout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.logout-button:hover {
+  background-color: #97013d;
+}
+
+  .sidebar.open {
   transform: translateX(0);
 }
 

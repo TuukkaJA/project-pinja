@@ -23,27 +23,3 @@
 .app h1 {
   color: #db0057;
 }
-
-.app button {
-  font: inherit;
-  cursor: pointer;
-  padding: 1rem 2rem;
-  border: none;
-  background-color: transparent;
-  color: white;
-  border-radius: 12px;
-  width: 50px;
-  display: flex;
-  align-items: center;
-}
-
-.app button:hover,
-.app button:active {
-  background-color: none;
-  border-color: none;
-}
-
-.app button img {
-  width: 30px;
-  height: 30px;
-}

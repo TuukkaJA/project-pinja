@@ -9,6 +9,12 @@ const loggedInUser = localStorage.getItem('loggedInUser');
 
 const navigate = useNavigate();
 
+const handleLogout = () => {
+  localStorage.removeItem('loggedInUser');
+  window.location.reload();
+  navigate('/Login');
+};
+
 const handleItemClick = (item) => {
   setActiveItem(item);
   if (item === "Consultants") navigate('/consultants') ;
@@ -16,8 +22,8 @@ const handleItemClick = (item) => {
   if (item === "Login") navigate('/Login');
 };
 
-  return (
-    <div className={`sidebar open`}>
+return (
+  <div className={`sidebar open`}>
       <button onClick={toggleSidebar}>
         {isOpen ? '' : 'Open Sidebar'}
         <img src={toggleIcon} alt="Toggle Icon" />
@@ -47,6 +53,11 @@ const handleItemClick = (item) => {
           <li>Team</li>
         </ul>
       )}
+      <div className="logout">
+        <button className="logout-button" onClick={handleLogout}>
+            Logout
+        </button>
+      </div>
     </div>
   );
 };
