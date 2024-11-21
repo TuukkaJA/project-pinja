@@ -18,6 +18,8 @@
     max-width: 80%;
     width: 600px;
     position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
@@ -56,4 +58,20 @@
     .cv-frame {
       height: 80%;
     }
+  }
+  
+  .field {
+    margin-bottom: 15px;
+  }
+  
+  .field label {
+    font-weight: bold;
+  }
+  
+  .field p {
+    margin: 5px 0;
+  }
+  
+  .actions {
+    margin-top: 10px;
   }

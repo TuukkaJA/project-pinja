@@ -11,7 +11,6 @@ function App() {
 
   useEffect(() => {
     const logInfo = localStorage.getItem('isLoggedIn');
-
     if (logInfo === '1') {
       setIsLoggedIn(true);
     }
@@ -32,9 +31,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login onLogin={loginHandler}/>} />
-          <Route index element={<Consultants />} />
-          <Route path="/consultants" element={<Consultants />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route index element={<Consultants isLoggedIn={isLoggedIn} />} />
+          <Route path="/consultants" element={<Consultants isLoggedIn={isLoggedIn}/>} />
+          <Route path="/profile" element={<Profile isLoggedIn={isLoggedIn}/>} />
         </Routes>
       </BrowserRouter>
   );

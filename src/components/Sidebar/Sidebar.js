@@ -10,6 +10,7 @@ const navigate = useNavigate();
 
 const handleLogout = () => {
   localStorage.removeItem('loggedInUser');
+  localStorage.removeItem('isLoggedIn');
   window.location.reload();
   navigate('/Login');
 };
