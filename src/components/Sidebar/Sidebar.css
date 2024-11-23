@@ -43,7 +43,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: px;
+}
+
+.team h1 {
+  margin-left: 50px;
 }
 
 .logout-button:hover {

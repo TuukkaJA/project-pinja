@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './CVModal.css';
 
 const CVModal = ({ consultant, onClose, onUpdate, isLoggedIn }) => {
@@ -6,6 +7,8 @@ const CVModal = ({ consultant, onClose, onUpdate, isLoggedIn }) => {
   const [isEditing, setIsEditing] = useState(false);
   const[formData, setFormData] = useState(consultant);
   const[originalFormData, setOriginalFormData] = useState(consultant);
+  const[message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     setOriginalFormData(consultant);
@@ -15,6 +18,13 @@ const CVModal = ({ consultant, onClose, onUpdate, isLoggedIn }) => {
     if (isLoggedIn) {
     setIsEditing((prev) => !prev);
     setFormData({ ...originalFormData});
+    }
+    else {
+      //alert("You need to be logged in to edit information");
+      setMessage("Log in to edit information");
+      setTimeout(() => {
+        setMessage("");
+      }, 3000);
     }
   };
 
@@ -155,6 +165,9 @@ const CVModal = ({ consultant, onClose, onUpdate, isLoggedIn }) => {
             Edit
           </button>
         )}
+        {message && <p className="login-message">{message} <button onClick={() => navigate('/Login')}>
+          Login
+        </button></p>}
         {isEditing && isLoggedIn && (
           <button onClick={handleCancel} className="cancel-button">
             Cancel

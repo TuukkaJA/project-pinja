@@ -42,6 +42,21 @@
     background-color: #db0057; 
 }
 
+.add-to-team {
+    color: #db0057;
+    font-weight: bold;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.add-to-team:hover {
+    color: #ffffff;
+    background-color: #db0057; 
+}
+
 .consultant-card {
     display: flex;
     align-items: center;
@@ -61,5 +76,9 @@
     .consultant-card {
       flex-direction: center;
       gap: 1rem;
+    }
+
+    .download-CV {
+        padding: 0.1rem 0.2rem;
     }
   }

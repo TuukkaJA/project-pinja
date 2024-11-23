@@ -1,8 +1,9 @@
 import React from 'react';
 import './ConsultantCard.css';
 import downLoadIcon from './download-icon.png';
+import plusIcon from './plus-icon.png';
 
-const ConsultantCard = ({ consultant }) => {
+const ConsultantCard = ({ consultant, onAddToTeam }) => {
   return (
     <div className="consultant-card">
       <img className="pp" src={consultant.pp} alt="" />
@@ -16,6 +17,7 @@ const ConsultantCard = ({ consultant }) => {
           <img src={downLoadIcon} alt="" /> Download CV
         </a>
         </div>
+        <button className="add-to-team" onClick={onAddToTeam}><img src={plusIcon} alt="" /></button>
     </div>
   );
 };

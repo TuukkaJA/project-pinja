@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Sidebar.css';
 import toggleIcon from '../../toggle-icon_pink.png';
 
-const Sidebar = ({ isOpen, toggleSidebar, activeItem, setActiveItem }) => {
+const Sidebar = ({ isOpen, toggleSidebar, activeItem, setActiveItem, team = [], setTeam }) => {
 
 const loggedInUser = localStorage.getItem('loggedInUser');
 const navigate = useNavigate();
@@ -45,7 +45,6 @@ return (
             className={activeItem === "Consultants" ? "active" : ""}>
           Consultants
           </li>
-          <li>Team</li>
         </ul>
       )}
       <div className="logout">
@@ -62,6 +61,20 @@ return (
         </button>
       )}
       </div>
+         <div className="team">
+          <h1>Team</h1>
+          <ul className="team-list">
+          {team.length > 0 ? (
+            team.map((consultant, index) => (
+              <li key={index} className="team-member">
+                {consultant.name} {consultant.surname}
+              </li>
+            ))
+          ) : (
+            <p>No team members added.</p>
+          )}
+        </ul>
+        </div>
     </div>
   );
 };

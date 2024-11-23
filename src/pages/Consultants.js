@@ -8,7 +8,7 @@ import toggleIcon from '../toggle-icon_pink.png';
 function Consultants({ isLoggedIn }) {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
     const [activeItem, setActiveItem] = useState('Consultants');
-    
+    const [team, setTeam] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedConsultant, setSelectedConsultant] = useState(null);
     const [consultants, setConsultants] = useState([
@@ -73,6 +73,8 @@ function Consultants({ isLoggedIn }) {
             toggleSidebar={toggleSidebar}
             activeItem={activeItem}
             setActiveItem={setActiveItem}
+            team={team}
+            setTeam={setTeam}
              />)}
          <button className="toggle-sidebar" onClick={toggleSidebar}>
           <img src={toggleIcon} alt="Toggle Icon" />
@@ -80,7 +82,7 @@ function Consultants({ isLoggedIn }) {
         <div className={`content ${selectedConsultant ? 'blurred' : ''}`}>
           <h1>Consultants</h1>
           <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
-          <ConsultantList consultants={filteredConsultants} onConsultantClick={openModal}/>
+          <ConsultantList consultants={filteredConsultants} onConsultantClick={openModal} setTeam={setTeam} team={team} />
         </div>
         {selectedConsultant && (
           <CVModal consultant={selectedConsultant} onClose={closeModal} onUpdate={handleUpdateConsultant} isLoggedIn={isLoggedIn}/>
