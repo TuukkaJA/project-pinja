@@ -34,7 +34,7 @@ function Profile() {
          </button>
          {isLoggedIn ? (
         <div className="content">
-       <Cv />
+       <Cv/>
         </div>
       ) : (
         <div className="content">

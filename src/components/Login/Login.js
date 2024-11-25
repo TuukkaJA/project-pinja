@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Sidebar from '../Sidebar/Sidebar';
 import toggleIcon from '../../toggle-icon_pink.png';
 import CVModal from '../CVModal/CVModal';
@@ -16,6 +16,7 @@ const Login = ({onLogin}) => {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
     const [activeItem, setActiveItem] = useState('Login');
     const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
       const storedUser = localStorage.getItem('loggedInUser');
@@ -56,7 +57,6 @@ const Login = ({onLogin}) => {
       localStorage.setItem('loggedInUser', enteredEmail);
       setIsLoggedIn(true);
       onLogin(enteredEmail, enteredPassword);
-      navigate('/login');
     };
 
     return (
@@ -77,6 +77,11 @@ const Login = ({onLogin}) => {
           <div className="welcome-message">
             <h2>Welcome Back!</h2>
             <p>You are logged in as <strong>{localStorage.getItem('loggedInUser')}</strong>.</p>
+            <button
+              className="login-button"
+              onClick={() => navigate('/Profile')}
+              >Go to Profile
+            </button>
           </div>
         ) : (   
           <form onSubmit={submitHandler}>
