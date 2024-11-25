@@ -1,0 +1,56 @@
+   h2 {
+    font-size: 1.5rem;
+    color: #db0057;
+  }
+
+  .cv {
+    margin-bottom: 2rem;
+  }
+  
+  .cv iframe {
+    width: 100%;
+    height: 1100px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .cv-modal-cv {
+    background: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: auto;
+    margin: auto;
+    border-radius: 12px;
+    position: flex;
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .cv-modal {
+      width: 100%;
+      height: 100%;
+    }
+  
+    .cv-frame {
+      height: 80%;
+    }
+  }
+
+  .field {
+    margin-bottom: 15px;
+  }
+  
+  .field label {
+    font-weight: bold;
+  }
+  
+  .field p {
+    margin: 5px 0;
+    color: black;
+  }
+  
+  .actions {
+    margin-top: 10px;
+  }
