@@ -14,5 +14,5 @@ As logged in user you can:
 
 ![Edit](edit.png)
 
-You can only edit the CV by sending an updated version of you CV
+You can't edit the CV straight from the interface. You have to update the pdf file in the public directory.
 ![CV](CV.png)
