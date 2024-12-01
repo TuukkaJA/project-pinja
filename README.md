@@ -12,5 +12,7 @@ As logged in user you can:
 - Download consultants CV in pdf
 - Edit your own profile info
 
-You can only edit the CV by sending an updated version of you CV
 ![Edit](edit.png)
+
+You can only edit the CV by sending an updated version of you CV
+![CV](CV.png)
