@@ -76,8 +76,8 @@ function Consultants({ isLoggedIn }) {
             team={team}
             setTeam={setTeam}
              />)}
-         <button className="toggle-sidebar" onClick={toggleSidebar}>
-          <img src={toggleIcon} alt="Toggle Icon" />
+         <button className="toggle-sidebar" title="Toggle sidebar" onClick={toggleSidebar}>
+          <img src={toggleIcon} alt="Toggle Icon" title="Toggle sidebar"/>
          </button>
         <div className={`content ${selectedConsultant ? 'blurred' : ''}`}>
           <h1>Consultants</h1>

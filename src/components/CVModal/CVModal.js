@@ -20,7 +20,6 @@ const CVModal = ({ consultant, onClose, onUpdate, isLoggedIn }) => {
     setFormData({ ...originalFormData});
     }
     else {
-      //alert("You need to be logged in to edit information");
       setMessage("Log in to edit information");
       setTimeout(() => {
         setMessage("");

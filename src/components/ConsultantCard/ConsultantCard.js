@@ -4,6 +4,7 @@ import downLoadIcon from './download-icon.png';
 import plusIcon from './plus-icon.png';
 
 const ConsultantCard = ({ consultant, onAddToTeam }) => {
+
   const handleButtonClick = (e) => {
     e.stopPropagation();
     onAddToTeam();
@@ -27,15 +28,17 @@ const ConsultantCard = ({ consultant, onAddToTeam }) => {
           href={consultant.cvLink}
           download
           onClick={handleDownloadClick}
+          title="Download CV in pdf"
         >
-          <img src={downLoadIcon} alt="" /> Download CV
+          <img src={downLoadIcon} alt="Download" title="Download CV in pdf"/> Download CV
         </a>
       </div>
       <button
         className="add-to-team"
         onClick={handleButtonClick}
+        title="Add to team"
       >
-        <img src={plusIcon} alt="" />
+        <img src={plusIcon} alt="Add to team" title="Add to team" />
       </button>
     </div>
   );

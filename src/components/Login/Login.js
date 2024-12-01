@@ -61,8 +61,8 @@ const Login = ({onLogin}) => {
 
     return (
       <div>
-        <button className="toggle-sidebar" onClick={toggleSidebar}>
-          <img src={toggleIcon} alt="Toggle Icon" />
+        <button className="toggle-sidebar" onClick={toggleSidebar} title="Toggle sidebar">
+          <img src={toggleIcon} alt="Toggle Icon" title="Toggle sidebar"/>
         </button>
         <div className="login">
             {isSidebarOpen && (

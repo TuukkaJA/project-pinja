@@ -7,6 +7,10 @@
     margin-bottom: 2rem;
   }
   
+  .actions {
+    margin-top: 10px;
+  }
+  
   .cv iframe {
     width: 100%;
     height: 1100px;

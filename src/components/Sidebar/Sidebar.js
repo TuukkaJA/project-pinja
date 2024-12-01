@@ -29,7 +29,7 @@ const handleConsultantClick = (consultant, index) => {
 
 return (
   <div className={`sidebar open`}>
-      <button onClick={toggleSidebar}>
+      <button onClick={toggleSidebar} title="Toggle sidebar">
         {isOpen ? '' : 'Open Sidebar'}
         <img src={toggleIcon} alt="Toggle Icon" />
       </button>
@@ -75,6 +75,7 @@ return (
               key={index} 
               className="team-member"
               onClick={() => handleConsultantClick(consultant, index)}
+              title="Remove team member"
               >
               {consultant.name} {consultant.surname} / {consultant.position} 
               </li>

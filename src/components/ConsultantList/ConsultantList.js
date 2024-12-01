@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ConsultantCard from '../ConsultantCard/ConsultantCard';
 
 const ConsultantList = ({ consultants, onConsultantClick, team, setTeam }) => {
@@ -13,7 +13,11 @@ const ConsultantList = ({ consultants, onConsultantClick, team, setTeam }) => {
   <div className="consultant-list">
     {consultants.map((consultant) => (
       <div key={consultant.id} onClick={() => onConsultantClick(consultant)}>
-        <ConsultantCard key={consultant.id} consultant={consultant} onAddToTeam={() => handleAddToTeam(consultant)} />
+        <ConsultantCard
+         key={consultant.id} 
+         consultant={consultant} 
+         onAddToTeam={() => handleAddToTeam(consultant)}
+         />
       </div>
     ))}
   </div>
