@@ -22,6 +22,11 @@ const handleItemClick = (item) => {
   if (item === "Login") navigate('/Login');
 };
 
+const handleConsultantClick = (consultant, index) => {
+  const updatedTeam = team.filter((_, i) => i !== index);
+  setTeam(updatedTeam);
+};
+
 return (
   <div className={`sidebar open`}>
       <button onClick={toggleSidebar}>
@@ -66,8 +71,12 @@ return (
           <ul className="team-list">
           {team.length > 0 ? (
             team.map((consultant, index) => (
-              <li key={index} className="team-member">
-                {consultant.name} {consultant.surname}
+              <li 
+              key={index} 
+              className="team-member"
+              onClick={() => handleConsultantClick(consultant, index)}
+              >
+              {consultant.name} {consultant.surname} / {consultant.position} 
               </li>
             ))
           ) : (
