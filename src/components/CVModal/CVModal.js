@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import jsPDF from 'jspdf';
 import './CVModal.css';
 
 const CVModal = ({ consultant, onClose, onUpdate, isLoggedIn }) => {
@@ -44,6 +45,24 @@ const CVModal = ({ consultant, onClose, onUpdate, isLoggedIn }) => {
   const handleCancel = () => {
     setIsEditing(false);
     setFormData({ ...originalFormData });
+  };
+
+  const handleDownloadPDF = () => {
+    const doc = new jsPDF();
+
+    doc.setFontSize(16);
+    doc.text(`${formData.name} ${formData.surname}'s CV`, 10, 10);
+
+    doc.setFontSize(12);
+    doc.text(`Education: ${formData.education}`, 10, 30);
+    doc.text(`Study Program: ${formData.studyProgram}`, 10, 40);
+    doc.text(`Graduating Year: ${formData.graduatingYear}`, 10, 50);
+    doc.text(`Certificates: ${formData.certificates}`, 10, 60);
+    doc.text(`Projects: ${formData.projects}`, 10, 70);
+    doc.text(`Technology Experience: ${formData.technologies}`, 10, 80);
+    doc.text(`Work Experience: ${formData.workExperience}`, 10, 90);
+
+    doc.save(`${formData.name}_${formData.surname}_CV.pdf`);
   };
   
   return (
@@ -172,10 +191,13 @@ const CVModal = ({ consultant, onClose, onUpdate, isLoggedIn }) => {
             Cancel
           </button>
         )}
+          <button onClick={handleDownloadPDF} className="download-button">
+          Download PDF
+          </button>
         </div>
-        <h2>{formData.name} {formData.surname}'s CV</h2>
+        {/*<h2>{formData.name} {formData.surname}'s CV</h2>
         <iframe src={consultant.cvLink} title="Consultant CV" className="cv-frame" />
-        <button className="close-button" onClick={onClose}>Close</button>
+        <button className="close-button" onClick={onClose}>Close</button>*/}
       </div>
     </div>
   );

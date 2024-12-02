@@ -1,15 +1,16 @@
 import React, { useState, useEffect} from 'react';
+import jsPDF from 'jspdf';
 import './Cv.css';
 
 function Cv({ onUpdate }) {
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
-    education: "MSc in Computer Science",
+    education: "Second year in Business IT",
     studyProgram: "Software Engineering",
-    graduatingYear: "2020",
+    graduatingYear: "2027",
     certificates: "AWS Certified Solutions Architect, Scrum Master",
     projects: "Web App Development, AI Chatbot",
-    technologyExperience: "HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, SQL, Python, Java",
+    technologyExperience: "HTML, CSS, JavaScript, React, Node.js, SQL, Python",
     workExperience: "Software Engineer at XYZ Corp, Intern at ABC Ltd",
   });
 
@@ -43,10 +44,28 @@ function Cv({ onUpdate }) {
     setFormData({ ...originalFormData });
   };
 
+  const handleDownloadPDF = () => {
+    const doc = new jsPDF();
+
+    doc.setFontSize(16);
+    doc.text(`${localStorage.getItem('loggedInUser')}'s CV`, 10, 10);
+
+    doc.setFontSize(12);
+    doc.text(`Education: ${formData.education}`, 10, 30);
+    doc.text(`Study Program: ${formData.studyProgram}`, 10, 40);
+    doc.text(`Graduating Year: ${formData.graduatingYear}`, 10, 50);
+    doc.text(`Certificates: ${formData.certificates}`, 10, 60);
+    doc.text(`Projects: ${formData.projects}`, 10, 70);
+    doc.text(`Technology Experience: ${formData.technologies}`, 10, 80);
+    doc.text(`Work Experience: ${formData.workExperience}`, 10, 90);
+
+    doc.save(`${localStorage.getItem('loggedInUser')}_CV.pdf`);
+  };
+
   return (
     <div>
-      <div className="cv-modal-cv">
-        <h2>{localStorage.getItem('loggedInUser')}'s Profile Information</h2>
+      <div className="cv-modal-cv"> 
+        <h2>{localStorage.getItem('loggedInUser')}'s Information</h2>
         <div className="field">
           <label>Education:</label>
           {isEditing ? (
@@ -153,15 +172,21 @@ function Cv({ onUpdate }) {
               Edit
             </button>
           )}
+            <button
+              onClick={handleDownloadPDF}
+              className="download-button"
+              title="Download CV in pdf"
+              > Download CV
+            </button>
         </div>
       </div>
-      <div className="cv">
+      {/*<div className="cv">
         <iframe
           src="/cv-files/Malli_cv.pdf"
           title="Consultant CV"
           className="cv-frame"
         />
-      </div>
+      </div>*/}
     </div>
   );
 }
