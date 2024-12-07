@@ -56,7 +56,7 @@ const CVModal = ({ consultant, onClose, onUpdate, isLoggedIn }) => {
     doc.setLineWidth(0.5);
     doc.line(10, 25, 200, 25);
 
-    doc.setTextColor(0, 102, 204);
+    doc.setTextColor(219, 1, 86);
     doc.setFontSize(16);
     doc.text("Personal Information", 10, 40);
 
