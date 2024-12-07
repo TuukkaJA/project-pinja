@@ -7,12 +7,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Usage
 As logged in user you can:
-- Edit consultants info
+- Edit consultants cv/info
 - Search for consultants
-- Download consultants CV in pdf
-- Edit your own profile info
+- Download consultants CV/info to pdf
+- Edit your own profile info/CV
 
 ![Edit](edit.png)
-
-You can't edit the CV straight from the interface. You have to update the pdf file in the public directory.
 ![CV](CV.png)
+![pdf](pdf.png)
