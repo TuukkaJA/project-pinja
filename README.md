@@ -1,7 +1,7 @@
 # App Project for Pinja to manage consultants
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project was apart of my react.js course in Vaasa University of Applied Sciences
+This project was apart of my react.js course in Vaasa University of Applied Sciences.
 The assinment was to create an app where you can:
 - Edit consultants cv/info (As main user)
 - Search for consultants
