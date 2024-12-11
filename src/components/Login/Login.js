@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Sidebar from '../Sidebar/Sidebar';
 import toggleIcon from '../../toggle-icon_pink.png';
-import CVModal from '../CVModal/CVModal';
 import '../../App.css'
 import './Login.css'
 
@@ -16,7 +15,6 @@ const Login = ({onLogin}) => {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
     const [activeItem, setActiveItem] = useState('Login');
     const navigate = useNavigate();
-    const location = useLocation();
 
     useEffect(() => {
       const storedUser = localStorage.getItem('loggedInUser');

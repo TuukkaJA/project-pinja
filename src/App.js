@@ -5,7 +5,7 @@ import Profile from './pages/Profile';
 import Login from './components/Login/Login';
 
 function App() {
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
+ 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const[loggedInUser, setLoggedInUser] = useState('');
 
